@@ -25,9 +25,7 @@ bool push(struct node_t **stack, int val){
     new_node->next = *stack;
 
     *stack = new_node;
-
-    printf("%d is val, %d is stack->value\n", val, (*stack)->value);
-    
+   
     return true;
 }
 
@@ -54,7 +52,6 @@ void pop_all(struct node_t** stack){
     while((popped_val = pop(stack)) != STACK_EMPTY){
         printf("%d just got popped.\n", popped_val);
     }
-    //printf("Stack popped it all off.\n");
 }
 
 int main(){
@@ -63,20 +60,11 @@ int main(){
     struct node_t *stack = NULL;
 
     push(&stack, 44);
-
-    
-    printf("%d is last in.\n", stack->value);
     push(&stack, 55);
-    printf("%d is last in.\n", stack->value);
     push(&stack, 99);
-    printf("%d is last in.\n", stack->value);
 
     
-    int popped_val = pop(&stack);
-    printf("%d just got popped.bloop\n", popped_val);
     pop_all(&stack);
-
-
 
     return 0;
 }
